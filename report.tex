@@ -10,7 +10,7 @@
 %***************************************************************************************************************
 % Note: Make all your adjustments in here
 %***************************************************************************************************************
-\input{htwsaar-i-mst-config}
+\input{config}
 
 %********************************************************************
 % Hyphenation
@@ -27,45 +27,42 @@
 \pagenumbering{roman}
 \pagestyle{plain}
 %*******************************************************
-% Frontmatter
+% frontmatter
 %*******************************************************
-\include{FrontBackmatter/Titlepage}
-\cleardoublepage\include{FrontBackmatter/Declaration}
-%\cleardoublepage\include{FrontBackmatter/ConfidentialityClause} % <-- sollte in der Regel nicht notwendig sein und mit Betreuer/Unternehmen abgeklärt werden
-\cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments}
-\cleardoublepage\include{FrontBackmatter/Contents}
+\include{frontmatter/titlepage}
+\cleardoublepage\include{frontmatter/declaration}
+%\cleardoublepage\include{frontmatter/confidentiality_clause} %
+\cleardoublepage\include{frontmatter/abstract}
+\cleardoublepage\include{frontmatter/acknowledgments}
+\cleardoublepage\include{frontmatter/table_of_contents}
 
 %*******************************************************
-% Mainmatter
+% Content
 %*******************************************************
 \cleardoublepage
 \pagenumbering{arabic}
 \pagestyle{headings}
 %\pagestyle{scrheadings}
-\cleardoublepage\include{Examples/Einleitung}	 	% Diese Einbindungen werden natürlich entfernt, wenn es an die richtige
-\cleardoublepage\include{Examples/Beispiele} 		% Abschlussarbeit geht!
-%\cleardoublepage\include{Chapters/KapitelBachelorarbeit} % <<< Hier alle Chapter der Abschlussarbeit (einzeln) einbinden
-
+\cleardoublepage\include{chapters/introduction}
 %********************************************************************
 % Bibliography/References
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
+\cleardoublepage\include{backmatter/bibliography}
 
 %********************************************************************
 % List of Figures etc.
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/ListOfs}
-\include{FrontBackmatter/Abbreviations}
+\cleardoublepage\include{backmatter/list_of_figures_etc}
+\include{backmatter/abbreviations}
 
 % ********************************************************************
 % Appendix/Anhang
 %***************************************************************
 \appendix
-\part*{Anhang}
-\cleardoublepage\include{Chapters/Anhang-A}
+\part*{Appendix}
+% \cleardoublepage\include{backmatter/appendices/$filename}
 
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage\include{backmatter/colophon_en}
 \end{document}
 % ********************************************************************
